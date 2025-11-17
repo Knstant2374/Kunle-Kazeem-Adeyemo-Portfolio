@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunle Kazeem Adeyemo - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-image {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .placeholder {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            padding: 2rem;
+            border-left: 4px solid #667eea;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .education-card h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .gpa {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Experience */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .experience-card h3 {
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-card ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .experience-card ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Publications */
+        .publications-section {
+            margin-bottom: 3rem;
+        }
+
+        .publications-section h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .publication-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .publication-card:hover {
+            transform: translateX(10px);
+        }
+
+        .publication-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .publication-card strong {
+            color: #667eea;
+        }
+
+        /* Leadership */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .leadership-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .leadership-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .leadership-card h4 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-card .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .leadership-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .award-card:hover {
+            transform: scale(1.05);
+        }
+
+        .award-card::before {
+            content: '🏆';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .award-card p {
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: #e9ecef;
+            border-radius: 15px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .footer-contact a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .skills-grid,
+            .leadership-grid,
+            .awards-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">KKA</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Kunle Kazeem Adeyemo</h1>
+                <p class="subtitle">PhD Candidate in Mechanical & Civil Engineering</p>
+                <p>Specializing in composite materials, structural analysis, and digital twin modeling at Michigan State University</p>
+                
+                <div class="contact-info">
+                    <a href="mailto:Adeyemok@msu.edu" class="contact-btn">
+                        📧 Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/kunlekazeemadeyemo/" target="_blank" class="contact-btn">
+                        💼 LinkedIn
+                    </a>
+                </div>
+                
+                <div style="color: rgba(255,255,255,0.9);">
+                    <p>📍 East Lansing, Michigan</p>
+                    <p>📞 +1 517 505 9879</p>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="placeholder">
+                    <p style="font-size: 4rem; margin-bottom: 1rem;">👤</p>
+                    <p>[Professional Photo Placeholder]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Education & Background</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Michigan State University</h3>
+                    <p class="date">Aug 2022 – Present</p>
+                    <p>PhD in Mechanical Engineering (in view)</p>
+                    <p>PhD in Civil Engineering (in view)</p>
+                    <p>Master of Science in Mechanical Engineering (in view)</p>
+                    <p class="gpa">GPA: 3.86/4.00</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Warsaw University of Technology</h3>
+                    <p class="date">Feb 2021 – Jun 2022</p>
+                    <p>Master of Science in Power Engineering</p>
+                    <p class="gpa">GPA: 3.82/4.00</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Ladoke Akintola University of Technology</h3>
+                    <p class="date">Nov 2012 – Sept 2022</p>
+                    <p>Bachelor of Technology in Mechanical Engineering</p>
+                    <p class="gpa">GPA: 3.72/4.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Experience -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research & Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Research Assistant III</h3>
+                    <p class="company">Composite Vehicle Research Center - MSU</p>
+                    <p class="date">Aug 2023 – Present</p>
+                    <ul>
+                        <li>Developing a digital twin model for progressive failure in the single lap joint of dissimilar materials (GFRP/AL) with a hybrid fastening system</li>
+                        <li>Developed an initial bolt preload analytical and numerical model for a single lap bolted joint with Abaqus software</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Teaching Assistant II</h3>
+                    <p class="company">Civil and Environmental Engineering - MSU</p>
+                    <p class="date">Jan 2024 – Present</p>
+                    <ul>
+                        <li>Contributing to the teaching of the Introduction to Structural Analysis course (CE 305)</li>
+                        <li>Practical training in SAP 2000 modeling software for structural analysis</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Research Assistant I</h3>
+                    <p class="company">Sustainable Energy Laboratory - MSU</p>
+                    <p class="date">Aug 2022 – Jun 2023</p>
+                    <ul>
+                        <li>Optimized the economic benefits of using second-life lithium batteries in EVs Fast Charging Stations in Michigan</li>
+                        <li>Proposed a series of experimental testing protocols for SLBs degradation testing</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Design Engineer</h3>
+                    <p class="company">Mikano International Limited - Lagos, Nigeria</p>
+                    <p class="date">May 2019 – Dec 2021</p>
+                    <ul>
+                        <li>Assisted in the production of the exhaust system and enclosure using SolidWorks software</li>
+                        <li>Collaborated with teammates to design the generator's soundproofing to mitigate noise pollution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Commercial Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Abaqus</span>
+                        <span class="skill-tag">Ansys</span>
+                        <span class="skill-tag">SOLIDWORKS</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">SAP 2000</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming & Software</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">MS Office</span>
+                        <span class="skill-tag">HomerPro</span>
+                        <span class="skill-tag">QGIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications & Presentations</h2>
+            
+            <div class="publications-section">
+                <h3>Journal Publications</h3>
+                <div class="publication-card">
+                    <p>Mahmood Haq, <strong>Kunle K. Adeyemo</strong>, Cloud, G.L. (2025). Novel Hybrid Fastening Systems for Composite Joints: A Parametric Study - Part I. <em>Composite Structures</em> - manuscript under review.</p>
+                </div>
+                <div class="publication-card">
+                    <p><strong>Kunle K. Adeyemo</strong>, Valentine Andrew, Mahmood Haq, and Cloud, G.L. (2025). Progressive failure analysis for GFRP/AL single-lap bolted joints. <em>Mechanics of Advanced Materials and Structures</em> - Writing the manuscript.</p>
+                </div>
+                <div class="publication-card">
+                    <p>Sampson E. Nwachukwu, <strong>Kunle K. Adeyemo</strong> et. al. (2025). Hybrid Renewable Energy Optimization Using HOMER Pro: A Systematic Literature Review and Future Research Agenda for Emerging Economies. <em>IEEE Access</em> - Under Review.</p>
+                </div>
+            </div>
+
+            <div class="publications-section">
+                <h3>Conference Proceedings</h3>
+                <div class="publication-card">
+                    <p><strong>Kunle K. Adeyemo</strong>, Valentine Andrew, and Mahmood Haq (2025). Progressive Failure Analysis of Dissimilar Single-Lap Bolted Joint Using LaRC05 Failure Criteria. <em>ACCE 2025</em>.</p>
+                </div>
+                <div class="publication-card">
+                    <p><strong>Kunle K. Adeyemo</strong>, et. al. (2020). The effect of residence time and temperature on product yields during the pyrolysis of coconut husks. <em>Conference Series 1734 012036</em>.</p>
+                </div>
+            </div>
+
+            <div class="publications-section">
+                <h3>Recent Presentations</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div class="publication-card">
+                        <p>2025 IFORE Student Research Competition</p>
+                    </div>
+                    <div class="publication-card">
+                        <p>2025 AGEP Student Success Conference</p>
+                    </div>
+                    <div class="publication-card">
+                        <p>2025 & 2024 ACCE Five Minutes Poster Talk</p>
+                    </div>
+                    <div class="publication-card">
+                        <p>2025 COGS Three Minute Thesis Talk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="leadership">
+        <div class="container">
+            <h2 class="section-title">Leadership & Activities</h2>
+            <div class="leadership-grid">
+                <div class="leadership-card">
+                    <h4>SAMPE - MSU</h4>
+                    <p class="role">Treasurer (Sept 2025 – Present)</p>
+                    <p>Revitalization of the SAMPE-MSU Student Chapter and writing grant proposals</p>
+                </div>
+                
+                <div class="leadership-card">
+                    <h4>University Committee on Libraries</h4>
+                    <p class="role">Graduate Student Representative (Sept 2025 – Present)</p>
+                    <p>Participating in policymaking and monitoring graduate student concerns</p>
+                </div>
+                
+                <div class="leadership-card">
+                    <h4>Graduate Studies Committee</h4>
+                    <p class="role">Student Representative (Sept 2025 – Present)</p>
+                    <p>Refined the Mechanical Engineering handbook for graduate students</p>
+                </div>
+                
+                <div class="leadership-card">
+                    <h4>Society of Plastics Engineers</h4>
+                    <p class="role">Technical Project Lead (Sept 2024 – Present)</p>
+                    <p>Leading STEM workshops and design competitions for undergraduates</p>
+                </div>
+                
+                <div class="leadership-card">
+                    <h4>ME Graduate Student Association</h4>
+                    <p class="role">COGS Representative (July 2025 – Present)</p>
+                    <p>Orientation facilitator for incoming graduate students</p>
+                </div>
+                
+                <div class="leadership-card">
+                    <h4>ComSciCon-MI</h4>
+                    <p class="role">Application Review Manager (Aug 2024 – Nov 2025)</p>
+                    <p>Setting evaluation criteria and managing application review process</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Awards & Honors</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <p>2025 Council of Graduate Students Travel Grant</p>
+                </div>
+                <div class="award-card">
+                    <p>2025 Best Oral Presentation AGEP (1st Runner-up)</p>
+                </div>
+                <div class="award-card">
+                    <p>2025 MSU Research Enhancement Award</p>
+                </div>
+                <div class="award-card">
+                    <p>2025 SPE Detroit-Section Scholarship</p>
+                </div>
+                <div class="award-card">
+                    <p>2025 SPE ACCE Graduate Scholarship</p>
+                </div>
+                <div class="award-card">
+                    <p>2024 SPE Detroit-Section Scholarship</p>
+                </div>
+                <div class="award-card">
+                    <p>2024 Auto EPCON Best Poster (1st Runner-up)</p>
+                </div>
+                <div class="award-card">
+                    <p>2022 Warsaw University Chancellor's Award (Best Student)</p>
+                </div>
+                <div class="award-card">
+                    <p>2021 Warsaw University Chancellor's Award (Best Student)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Gallery -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Research Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[Research Image 1]</div>
+                <div class="gallery-item">[Research Image 2]</div>
+                <div class="gallery-item">[Research Image 3]</div>
+                <div class="gallery-item">[Research Image 4]</div>
+                <div class="gallery-item">[Research Image 5]</div>
+                <div class="gallery-item">[Research Image 6]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer/Contact -->
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <p>Interested in collaboration or discussing research opportunities?</p>
+        <div class="footer-contact">
+            <a href="mailto:Adeyemok@msu.edu">📧 Adeyemok@msu.edu</a>
+            <a href="https://www.linkedin.com/in/kunlekazeemadeyemo/" target="_blank">💼 LinkedIn</a>
+        </div>
+        <p>📍 1179 Palmer Lane, East Lansing, MI | 📞 +1 517 505 9879</p>
+        <p style="margin-top: 2rem; opacity: 0.8;">© 2025 Kunle Kazeem Adeyemo. All rights reserved.</p>
+    </footer>
+</body>
+</html>
