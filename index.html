@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
         }
 
         /* Navigation */
@@ -23,9 +23,9 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
@@ -41,7 +41,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -58,10 +58,25 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: #1e3c72;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
         }
 
         /* Hero Section */
@@ -90,7 +105,7 @@
 
         .hero-content .subtitle {
             font-size: 1.5rem;
-            color: #f0f0f0;
+            color: #64b5f6;
             margin-bottom: 1rem;
         }
 
@@ -113,16 +128,17 @@
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background: white;
-            color: #667eea;
+            color: #1e3c72;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 0.95rem;
         }
 
         .contact-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
         }
 
         .hero-image {
@@ -150,7 +166,7 @@
         }
 
         section:nth-child(even) {
-            background: #f8f9fa;
+            background: #f8fafc;
         }
 
         .container {
@@ -162,8 +178,9 @@
             font-size: 2.5rem;
             margin-bottom: 3rem;
             text-align: center;
-            color: #333;
+            color: #1e3c72;
             position: relative;
+            font-weight: 700;
         }
 
         .section-title::after {
@@ -171,7 +188,7 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             margin: 1rem auto 0;
             border-radius: 2px;
         }
@@ -184,26 +201,26 @@
 
         .education-card {
             padding: 2rem;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #1e3c72;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .education-card:hover {
             transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 25px rgba(30,60,114,0.15);
         }
 
         .education-card h3 {
-            color: #333;
+            color: #1e3c72;
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
         .education-card .date {
-            color: #667eea;
+            color: #2a5298;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -223,23 +240,24 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid #1e3c72;
         }
 
         .experience-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 30px rgba(30,60,114,0.2);
         }
 
         .experience-card h3 {
-            color: #333;
+            color: #1e3c72;
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
 
         .experience-card .company {
-            color: #667eea;
+            color: #2a5298;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -259,13 +277,14 @@
             padding-left: 1.5rem;
             margin-bottom: 0.5rem;
             position: relative;
+            color: #555;
         }
 
         .experience-card ul li::before {
             content: '▹';
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: #1e3c72;
             font-weight: bold;
         }
 
@@ -277,10 +296,11 @@
         }
 
         .skill-category {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             padding: 2rem;
             border-radius: 15px;
             color: white;
+            box-shadow: 0 4px 20px rgba(30,60,114,0.3);
         }
 
         .skill-category h3 {
@@ -310,7 +330,7 @@
 
         .publications-section h3 {
             font-size: 1.8rem;
-            color: #333;
+            color: #1e3c72;
             margin-bottom: 1.5rem;
         }
 
@@ -319,8 +339,8 @@
             padding: 1.5rem;
             border-radius: 10px;
             margin-bottom: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #1e3c72;
             transition: transform 0.3s;
         }
 
@@ -334,7 +354,7 @@
         }
 
         .publication-card strong {
-            color: #667eea;
+            color: #1e3c72;
         }
 
         /* Leadership */
@@ -348,22 +368,24 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s;
+            border-top: 3px solid #2a5298;
         }
 
         .leadership-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(30,60,114,0.15);
         }
 
         .leadership-card h4 {
-            color: #333;
+            color: #1e3c72;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
 
         .leadership-card .role {
-            color: #667eea;
+            color: #2a5298;
             font-weight: 600;
             margin-bottom: 0.75rem;
         }
@@ -384,13 +406,14 @@
             background: white;
             padding: 1.5rem;
             border-radius: 10px;
-            border-top: 4px solid #667eea;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid #1e3c72;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
 
         .award-card:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(30,60,114,0.15);
         }
 
         .award-card::before {
@@ -413,15 +436,16 @@
         }
 
         .gallery-item {
-            background: #e9ecef;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             border-radius: 15px;
             height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
+            color: #1e3c72;
             font-size: 1.1rem;
             transition: transform 0.3s;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
         .gallery-item:hover {
@@ -430,7 +454,7 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             color: white;
             text-align: center;
             padding: 3rem 2rem;
@@ -442,7 +466,7 @@
         }
 
         footer p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
@@ -459,27 +483,33 @@
             color: white;
             text-decoration: none;
             padding: 0.75rem 2rem;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             border-radius: 25px;
             transition: background 0.3s;
+            font-size: 0.95rem;
         }
 
         .footer-contact a:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.25);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 968px) {
             .hero-container {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
-            .nav-links {
-                gap: 1rem;
+            .hero-content .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-image {
+                min-height: 300px;
             }
 
             .section-title {
@@ -487,16 +517,146 @@
             }
 
             .skills-grid,
-            .leadership-grid,
-            .awards-grid,
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-btn {
+                justify-content: center;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .education-card,
+            .experience-card,
+            .leadership-card {
+                padding: 1.5rem;
+            }
+
+            .education-card h3,
+            .experience-card h3,
+            .leadership-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            footer h2 {
+                font-size: 2rem;
+            }
+
+            footer p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 200px;
             }
         }
 
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Overlay for mobile menu */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
         }
     </style>
 </head>
@@ -505,15 +665,22 @@
     <nav>
         <div class="nav-container">
             <div class="logo">KKA</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#research" onclick="closeMenu()">Research</a></li>
+                <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+                <li><a href="#leadership" onclick="closeMenu()">Leadership</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
         </div>
     </nav>
+    
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
     <!-- Hero Section -->
     <div class="hero">
@@ -742,74 +909,4 @@
                 
                 <div class="leadership-card">
                     <h4>ComSciCon-MI</h4>
-                    <p class="role">Application Review Manager (Aug 2024 – Nov 2025)</p>
-                    <p>Setting evaluation criteria and managing application review process</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Awards & Honors</h2>
-            <div class="awards-grid">
-                <div class="award-card">
-                    <p>2025 Council of Graduate Students Travel Grant</p>
-                </div>
-                <div class="award-card">
-                    <p>2025 Best Oral Presentation AGEP (1st Runner-up)</p>
-                </div>
-                <div class="award-card">
-                    <p>2025 MSU Research Enhancement Award</p>
-                </div>
-                <div class="award-card">
-                    <p>2025 SPE Detroit-Section Scholarship</p>
-                </div>
-                <div class="award-card">
-                    <p>2025 SPE ACCE Graduate Scholarship</p>
-                </div>
-                <div class="award-card">
-                    <p>2024 SPE Detroit-Section Scholarship</p>
-                </div>
-                <div class="award-card">
-                    <p>2024 Auto EPCON Best Poster (1st Runner-up)</p>
-                </div>
-                <div class="award-card">
-                    <p>2022 Warsaw University Chancellor's Award (Best Student)</p>
-                </div>
-                <div class="award-card">
-                    <p>2021 Warsaw University Chancellor's Award (Best Student)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Gallery -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Research Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">[Research Image 1]</div>
-                <div class="gallery-item">[Research Image 2]</div>
-                <div class="gallery-item">[Research Image 3]</div>
-                <div class="gallery-item">[Research Image 4]</div>
-                <div class="gallery-item">[Research Image 5]</div>
-                <div class="gallery-item">[Research Image 6]</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer/Contact -->
-    <footer id="contact">
-        <h2>Get In Touch</h2>
-        <p>Interested in collaboration or discussing research opportunities?</p>
-        <div class="footer-contact">
-            <a href="mailto:Adeyemok@msu.edu">📧 Adeyemok@msu.edu</a>
-            <a href="https://www.linkedin.com/in/kunlekazeemadeyemo/" target="_blank">💼 LinkedIn</a>
-        </div>
-        <p>📍 1179 Palmer Lane, East Lansing, MI | 📞 +1 517 505 9879</p>
-        <p style="margin-top: 2rem; opacity: 0.8;">© 2025 Kunle Kazeem Adeyemo. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+                    <p class="role">Application Review Manager (Aug 2024
